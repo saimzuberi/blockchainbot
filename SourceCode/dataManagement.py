@@ -16,7 +16,7 @@ class DatabaseManagement(MyRESTClient):
             sys.exit("Wrong Market >> Shutting Down Program (Restart Required)")
         self.market = market
         # CHECK IF THE FODLERS EXIST FOR THE MARKET
-        self.src_db = os.path.join(data_storage_path,'Data',self.market)
+        self.src_db = os.path.join(data_storage_path,self.market)
         # IF Subfolders do not exist: Create them
         subfolders = ['Database','OHLC','Stats']
         if not os.path.exists(self.src_db):

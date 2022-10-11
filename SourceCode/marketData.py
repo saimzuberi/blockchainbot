@@ -11,6 +11,11 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from polygon import RESTClient
 
+# FORCES THE PROGRAM TO FIND THE CORRECT .ENV FILE
+dotenv_path = os.path.join(os.path.dirname(__file__),'.env')
+load_dotenv(dotenv_path)
+# print(f"API KEY: {os.getenv('polygon_api_key')}")
+
 from local_settings import *
 
 try:
@@ -20,12 +25,10 @@ except:
     print("SourceCode absolute poath not found!")
     sys.path.append(input("Enter SourceCode folder absolute path"))
 
-load_dotenv()
-print(f"API KEY: {os.getenv('polygon_api_key')}")
         
 class MyRESTClient(RESTClient):
 
-    def __init__(self, auth_key: str=polygon_api_key, timeout:int=5):
+    def __init__(self, auth_key: str=os.getenv('polygon_api_key'), timeout:int=5):
         
         # super().__init__(os.getenv("polygon_api_key"))
         super().__init__(auth_key)
