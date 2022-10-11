@@ -14,8 +14,8 @@ node_modules/
 # OS or Editor folders
 .DS_Store
 .DS_store
-SourceCode/.env
-SourceCode/local_settings.py
+*/.env
+*/local_settings.py
 Thumbs.db
 .ipynb_checkpoints
 .idea
