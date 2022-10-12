@@ -13,9 +13,8 @@ node_modules/
 .tmp/
 # OS or Editor folders
 .DS_Store
-.DS_store
-*/.env
-*/local_settings.py
+../.DS_store
+
 Thumbs.db
 .ipynb_checkpoints
 .idea
@@ -39,6 +38,7 @@ credentials.cfg
 # Ignore Folders
 venv
 .idea/
-.ipynb_checkpoints/
+*.ipynb_checkpoints/
 *__pycache__/
 *.vscode
+*local_settings.py
