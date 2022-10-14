@@ -37,7 +37,7 @@ class DatabaseManagement(MyRESTClient):
             ticker_df = self.get_tickers(self.market)
             if self.market=='crypto':
                 # Removing X: from the front of the ticker name
-                ticker_df.ticker = ticker_df.ticker.apply(lambda x: x.lstrip("X:"))
+                ticker_df.ticker = ticker_df.ticker.apply(lambda x: x.replace("X:",""))
             # STORING THE DataFrame into Google Drive
             ticker_df.to_csv(src_ticker_df)
         else:
